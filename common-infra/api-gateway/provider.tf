@@ -17,7 +17,16 @@ terraform {
 
     ## Default Workspace
     workspaces {
-      name = "common-vpc"
+      name = "common-gateway"
     }
   }
+}
+
+data "tfe_outputs" "vpc" {
+  organization = "leedonggyu-org"
+  workspace    = "common-vpc"
+}
+
+output "vpc" {
+  value = data.tfe_outputs.vpc.nonsensitive_values
 }
