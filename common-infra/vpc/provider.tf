@@ -1,17 +1,5 @@
-variable "AWS_ACCESS_KEY_ID" {
-
-  default = "terraform workspace variables"
-}
-
-variable "AWS_SECRET_ACCESS_KEY" {
-
-  default = "terraform workspace variables"
-}
-
 provider "aws" {
-  region     = "ap-northeast-2"
-  access_key = var.AWS_ACCESS_KEY_ID
-  secret_key = var.AWS_SECRET_ACCESS_KEY
+  region = "ap-northeast-2"
 }
 
 terraform {

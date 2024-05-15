@@ -1,2 +1,2 @@
-base:
-	cd common-infra/vpc && terraform apply
+vpc:
+	cd common-infra/vpc && terraform plan

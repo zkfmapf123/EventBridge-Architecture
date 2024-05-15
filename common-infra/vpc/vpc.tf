@@ -31,3 +31,7 @@ module "vpc3tier" {
     apigateway_is_enable   = false
   }
 }
+
+output "out" {
+  value = module.vpc3tier
+}
