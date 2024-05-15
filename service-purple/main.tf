@@ -29,8 +29,14 @@ data "tfe_outputs" "vpc" {
   workspace    = "common-vpc"
 }
 
+data "tfe_outputs" "sqs" {
+  organization = "leedonggyu-org"
+  workspace    = "common-sqs"
+}
+
 locals {
   vpc = data.tfe_outputs.vpc.nonsensitive_values.vpc.vpc
+  sqs = data.tfe_outputs.sqs.nonsensitive_values.queue
 }
 
 
@@ -90,7 +96,11 @@ module "purple" {
       {
         name  = "PORT",
         value = "3000"
-      }
+      },
+      {
+        name  = "BLUE_QUEUE_URL",
+        value = local.sqs.blue
+      },
     ],
     portMappings = [
       {
