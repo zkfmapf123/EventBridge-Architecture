@@ -15,6 +15,7 @@ green-deploy:
 purple-deploy:
 	cd service-purple && terraform init && terraform apply --auto-approve
 
+## Service 배포
 service-deploy:
 	@make blue-deploy
 	@make green-deploy
