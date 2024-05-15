@@ -81,7 +81,7 @@ module "blue" {
 
   task_def = [{
     name      = "blue-container"
-    image     = "${data.aws_ecr_repository.ecr.repository_url}:latest"
+    image     = "${data.aws_ecr_repository.ecr.repository_url}:${random_id.version.hex}"
     cpu       = 256
     memory    = 512
     essential = true,

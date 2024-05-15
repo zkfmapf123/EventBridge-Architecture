@@ -2,15 +2,16 @@ variable "ecr_name" {
   default = "purple-svc-ecr"
 }
 
-resource "random_id" "version" {
-  keepers = {
-    first = "${timestamp()}"
-  }
-  byte_length = 8
-}
-
 data "aws_ecr_repository" "ecr" {
   name = var.ecr_name
+}
+
+resource "random_id" "version" {
+  byte_length = 8
+
+  keepers = {
+    always_generate = "${timestamp()}"
+  }
 }
 
 resource "null_resource" "dockerizing" {
@@ -20,7 +21,7 @@ resource "null_resource" "dockerizing" {
   }
 
   triggers = {
-    version = random_id.version.hex
+    version = "${timestamp()}"
   }
 }
 
@@ -33,7 +34,7 @@ resource "null_resource" "push" {
   depends_on = [null_resource.dockerizing]
 
   triggers = {
-    version = random_id.version.hex
+    version = "${timestamp()}"
   }
 }
 
