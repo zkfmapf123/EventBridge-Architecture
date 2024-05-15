@@ -3,7 +3,7 @@ module "vpc3tier" {
   version = "1.0.6"
 
   prefix     = "eda"
-  vpc_name   = "donggyu"
+  vpc_name   = "donggyus"
   vpc_region = "ap-northeast-2"
   vpc_cidr   = "10.0.0.0/16"
 
