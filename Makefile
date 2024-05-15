@@ -1,2 +1,2 @@
 base:
-	cd common-infra/vpc && terraform apply --var-file="../../vars.tfvars"
+	cd common-infra/vpc && terraform apply
