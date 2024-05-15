@@ -10,6 +10,6 @@ app.get("/health", (req, res) => {
     return res.status(200).send("success")
 })
 
-app.get(process.env.PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log(`Hello Purple Service to : ${process.env.PORT}`)
 })

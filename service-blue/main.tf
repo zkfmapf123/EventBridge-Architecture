@@ -81,7 +81,7 @@ module "blue" {
 
   task_def = [{
     name      = "blue-container"
-    image     = "zkfmapf123/donggyu-friends:2.0"
+    image     = "${data.aws_ecr_repository.ecr.repository_url}:latest"
     cpu       = 256
     memory    = 512
     essential = true,
@@ -109,4 +109,6 @@ module "blue" {
       }
     }
   }]
+
+  depends_on = [null_resource.push, null_resource.dockerizing]
 }

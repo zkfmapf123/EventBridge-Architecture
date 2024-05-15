@@ -81,7 +81,7 @@ module "green" {
 
   task_def = [{
     name      = "green-container"
-    image     = "zkfmapf123/donggyu-friends:2.0"
+    image     = "${data.aws_ecr_repository.ecr.repository_url}:${random_id.version.hex}"
     cpu       = 256
     memory    = 512
     essential = true,
