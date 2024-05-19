@@ -1,5 +1,11 @@
 # EventBridge Architecture
 
+## ECS Internal Service
+
+![eda-1](./public/3.png)
+
+## ECS Service use Event Bridge
+
 ![eda](./public/1.png)
 
 ## Progress... (테스트때문에 service destory만 진행함)
