@@ -25,7 +25,7 @@ module "vpc3tier" {
 
   endpoint_setting = {
     s3_is_enable           = false
-    ecr_is_enable          = true
+    ecr_is_enable          = false
     sqs_is_enable          = false
     codepipeline_is_enable = false
     apigateway_is_enable   = false
